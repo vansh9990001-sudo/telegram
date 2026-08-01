@@ -1,0 +1,22 @@
+# Render service configuration (Background Worker)
+services:
+  - type: worker
+    name: telegram-filestore-bot
+    env: docker
+    plan: starter
+    dockerfilePath: Dockerfile
+    envVars:
+      - key: API_ID
+        value: "<YOUR_API_ID>"
+      - key: API_HASH
+        value: "<YOUR_API_HASH>"
+      - key: BOT_TOKEN
+        value: "<YOUR_BOT_TOKEN>"
+      - key: MONGO_URI
+        value: "<YOUR_MONGO_URI>"
+      - key: DB_NAME
+        value: "telegram_filestore"
+      - key: BOT_USERNAME
+        value: ""  # optional
+      - key: SHARE_TOKEN_TTL_DAYS
+        value: "0"
