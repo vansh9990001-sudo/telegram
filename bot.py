@@ -95,7 +95,7 @@ async def send_saved_file(chat_id: int, file_doc: dict):
     except Exception:
         log.exception("Failed to send saved file.")
 
-@app.on_message(filters.private & filters.media & ~filters.edited)
+@app.on_message(filters.private & filters.media)
 async def media_handler(client: Client, message: Message):
     file_id, file_name, file_type, file_size = extract_media_info(message)
     if not file_id:
